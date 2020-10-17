@@ -5,7 +5,7 @@ from telegram import ParseMode, Message
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
-from tgbot.modules.sql import notes_sql as sql
+import tgbot.modules.sql.notes_sql as notessql
 from tgbot import dispatcher, LOGGER, OWNER_ID, MESSAGE_DUMP
 from tgbot.__main__ import DATA_IMPORT
 from tgbot.modules.helper_funcs.chat_status import user_admin
