@@ -121,10 +121,10 @@ def __chat_settings__(chat_id, user_id):
 
 
 __help__ = """
- - /flood: Get the current flood control setting
+ ◉ /flood : Get the current flood control setting
 
 *Admin only:*
- - /setflood <int/'no'/'off'>: enables or disables flood control
+ ◉ /setflood <int/'no'/'off'> : enables or disables flood control
 """
 
 __mod_name__ = "AntiFlood"
