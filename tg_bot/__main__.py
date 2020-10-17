@@ -31,8 +31,7 @@ Add me to your group for spam free running.
 HELP_STRINGS = """
 Hello There! My Name is *Chiyo*.\nA Powerful Group Management Bot.
 
-List of *Main* Commands Available *Chiyo*
-[;-)](https://telegra.ph/file/43d0f502265593a2d388c.jpg)
+List of *Main* Commands Available *Chiyo* [◉‿◉](https://telegra.ph/file/48f53eeecd306f7f7b748.jpg)
  ◉ /start: start the bot
  ◉ /help: PM's you this message.
  ◉ /help <module name>: PM's you info about that module.
