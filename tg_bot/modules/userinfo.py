@@ -118,10 +118,10 @@ def __gdpr__(user_id):
 
 
 __help__ = """
- - /setbio <text>: while replying, will save another user's bio
- - /bio: will get your or another user's bio. This cannot be set by yourself.
- - /setme <text>: will set your info
- - /me: will get your or another user's info
+ ◉ /setbio <text>: while replying, will save another user's bio
+ ◉ /bio: will get your or another user's bio. This cannot be set by yourself.
+ ◉ /setme <text>: will set your info
+ ◉ /me: will get your or another user's info
 """
 
 __mod_name__ = "Bio/Abouts"
