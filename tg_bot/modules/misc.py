@@ -380,13 +380,13 @@ def stats(bot: Bot, update: Update):
 
 # /ip is for private use
 __help__ = """
- - /id: get the current group id. If used by replying to a message, gets that user's id.
- - /runs: reply a random string from an array of replies.
- - /slap: slap a user, or get slapped if not a reply.
- - /info: get information about a user.
- - /gdpr: deletes your information from the bot's database. Private chats only.
+ ◉ /id : get the current group id. If used by replying to a message, gets that user's id.
+ ◉ /runs : reply a random string from an array of replies.
+ ◉ /slap : slap a user, or get slapped if not a reply.
+ ◉ /info : get information about a user.
+ ◉ /gdpr : deletes your information from the bot's database. Private chats only.
 
- - /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
+ ◉ /markdownhelp: quick summary of how markdown works in telegram - can only be called in private chats.
 """
 
 __mod_name__ = "Misc"
