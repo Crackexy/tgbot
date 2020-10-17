@@ -426,6 +426,7 @@ __help__ = """
 *Admin only:*
  ◉ /gbanstat <on/of/yes/no> 
 To turn on or of the effect of global bans in your group.
+"""
 
 __mod_name__ = "Global Bans"
 
