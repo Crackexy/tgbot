@@ -19,43 +19,34 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hi {}, my name is {}! If you have any questions on how to use me, read /help - and then head to @MarieSupport.
-
-I'm a group manager bot built in python3, using the python-telegram-bot library, and am fully opensource; \
-you can find what makes me tick [here](github.com/PaulSonOfLars/tgbot)!
-
-Feel free to submit pull requests on github, or to contact my support group, @MarieSupport, with any bugs, questions \
-or feature requests you might have :)
-I also have a news channel, @MarieNews for announcements on new features, downtime, etc.
-
-You can find the list of available commands with /help.
-
-If you're enjoying using me, and/or would like to help me survive in the wild, hit /donate to help fund/upgrade my VPS!
+Hi {}, my name is Sophia!
+I am a Powerful Telegram Group Management bot with Some Anime Fun.
+Add me to your group for spam free running.
+================================
+>> For List Of Available Commands Hit /help.
+>> For Chiyo Updates Join [Here](t.me/ChiyoUpdates).
+================================\n
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
-the things I can help you with.
+Hello There! My Name is *Chiyo*.\nA Powerful Group Management Bot.
 
-*Main* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
- - /donate: information about how to donate!
- - /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
+List of *Main* Commands Available *Chiyo*
+[;-)](https://telegra.ph/file/43d0f502265593a2d388c.jpg)
+ ◉ /start: start the bot
+ ◉ /help: PM's you this message.
+ ◉ /help <module name>: PM's you info about that module.
+ ◉ /settings:
+ ◉ in PM: will send you your settings for all supported modules.
+ ◉ in a group: will redirect you to pm, with all that chat's settings.
 
-{}
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
-It took lots of work for my creator to get me to where I am now, and every donation helps \
-motivate him to make me even better. All the donation money will go to a better VPS to host me, and/or beer \
-(see his bio!). He's just a poor student, so every little helps!
-There are two ways of paying him; [PayPal](paypal.me/PaulSonOfLars), or [Monzo](monzo.me/paulnionvestergaardlarsen)."""
+But Chiyo Has Been Hosted On Free Servers And Don't Require Any Donations For Now"""
+
+CHIYO_IMG = "https://telegra.ph/file/8af3961975d1cafd53839.jpg"
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -148,11 +139,12 @@ def start(bot: Bot, update: Update, args: List[str]):
 
         else:
             first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
+            update.effective_message.reply_photo(CHIYO_IMG,
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
-                parse_mode=ParseMode.MARKDOWN)
+                parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Add Chiyo To Your Group",
+                                                                       url="t.me/{}?startgroup=true".format(bot.username))]]))
     else:
-        update.effective_message.reply_text("Yo, whadup?")
+        update.effective_message.reply_text("Heya, Am Alive 😊")
 
 
 # for test purposes
