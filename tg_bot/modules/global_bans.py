@@ -6,15 +6,14 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import run_async, CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
 
-import skylee.modules.sql.global_bans_sql as sql
-from skylee import (
+import tgbot.modules.sql.global_bans_sql as sql
+from tgbot import (
     dispatcher,
     OWNER_ID,
     SUDO_USERS,
     SUPPORT_USERS,
     STRICT_GBAN,
     MESSAGE_DUMP,
-    spamwtc,
 )
 from skylee.modules.helper_funcs.chat_status import user_admin, is_user_admin
 from skylee.modules.helper_funcs.extraction import extract_user, extract_user_and_text
@@ -78,7 +77,7 @@ def gban(update, context):
         return
 
     if user_id == OWNER_ID:
-        message.reply_text("Nice try -_- but I'm never gonna gban him.")
+        message.reply_text("Nice try -_- But I Am Never Gonna Gban My Owner ♥️")
         return
 
     if int(user_id) in SUDO_USERS:
@@ -425,17 +424,10 @@ def __chat_settings__(chat_id, user_id):
 
 __help__ = """
 *Admin only:*
- ✗ /spamshield <on/off/yes/no>: Will disable or enable the effect of Spam protection in your group.
+ ◉ /gbanstat <on/of/yes/no> 
+To turn on or of the effect of global bans in your group.
 
-Spam shield uses @Spamwatch API and Global bans to remove Spammers as much as possible from your chatroom!
-
-*What is SpamWatch?*
-
-SpamWatch maintains a large constantly updated ban-list of spambots, trolls, bitcoin spammers and unsavoury characters.
-@Meikobot will constantly help banning spammers off from your group automatically So, you don't have to worry about spammers storming your group[.](https://telegra.ph/file/c1051d264a5b4146bd71e.jpg)
-"""
-
-__mod_name__ = "Spam Shield"
+__mod_name__ = "Global Bans"
 
 GBAN_HANDLER = CommandHandler(
     "gban",
