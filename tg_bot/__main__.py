@@ -19,11 +19,11 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-Hi {}, my name is Sophia!
-I am a Powerful Telegram Group Management bot with Some Anime Fun.
-Add me to your group for spam free running.
+Hi {}, my name is *Chiyo*.
+I am a Powerful Telegram Group Management Bot.
+Add me to your group for a proper and spam free management.
 ================================
->> For List Of Available Commands Hit /help.
+>> For Available Commands Hit /help.
 >> For Chiyo Updates Join [Here](t.me/ChiyoUpdates).
 ================================\n
 """
