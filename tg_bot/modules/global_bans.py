@@ -1,7 +1,7 @@
 import html
 from io import BytesIO
 
-from telegram import ParseMode, ChatAction
+from telegram import ParseMode
 from telegram.error import BadRequest, TelegramError
 from telegram.ext import run_async, CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
@@ -18,7 +18,6 @@ from tg_bot import (
 from tg_bot.modules.helper_funcs.chat_status import user_admin, is_user_admin
 from tg_bot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
 from tg_bot.modules.helper_funcs.filters import CustomFilters
-from tg_bot.modules.helper_funcs.alternate import typing_action, send_action
 from tg_bot.modules.sql.users_sql import get_all_chats
 
 GBAN_ENFORCE_GROUP = 6
