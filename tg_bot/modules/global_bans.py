@@ -393,7 +393,7 @@ def gbanstat(update, context):
 
 
 def __stats__():
-    return "✗ {} gbanned users.".format(sql.num_gbanned_users())
+    return "{} gbanned users.".format(sql.num_gbanned_users())
 
 
 def __user_info__(user_id):
@@ -408,7 +408,7 @@ def __user_info__(user_id):
         user = sql.get_gbanned_user(user_id)
         if user.reason:
             text += "\nReason: {}".format(html.escape(user.reason))
-            text += "\n\nAppeal at @MeikosupportChat if you think it's a Mistake !"
+            text += "\n\nAppeal at @ChiyoSupport if you think it's a Mistake !"
     else:
         text = text.format("No")
     return text
