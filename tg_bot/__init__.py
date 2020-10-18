@@ -46,6 +46,7 @@ if ENV:
     WEBHOOK = bool(os.environ.get('WEBHOOK', False))
     URL = os.environ.get('URL', "")  # Does not contain token
     PORT = int(os.environ.get('PORT', 5000))
+    MESSAGE_DUMP = os.environ.get('MESSAGE_DUMP', -1178630433)
     CERT_PATH = os.environ.get("CERT_PATH")
 
     DB_URI = os.environ.get('DATABASE_URL')
