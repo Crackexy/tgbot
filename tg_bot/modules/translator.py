@@ -8,9 +8,9 @@ from emoji import UNICODE_EMOJI
 from telegram import ChatAction
 from telegram.ext import run_async
 
-from skylee import dispatcher
-from skylee.modules.disable import DisableAbleCommandHandler
-from skylee.modules.helper_funcs.alternate import typing_action, send_action
+from tg_bot import dispatcher
+from tg_bot.modules.disable import DisableAbleCommandHandler
+from tg_bot.modules.helper_funcs.alternate import typing_action, send_action
 
 from googletrans import Translator
 
@@ -99,9 +99,9 @@ def spellcheck(update, context):
 
 
 __help__ = """
-✗ /tr or /tl: - To translate to your language, by default language is set to english, use `/tr <lang code>` for some other language!
-✗ /splcheck: - As a reply to get grammar corrected text of gibberish message.
-✗ /tts: - To some message to convert it into audio format!
+ ◉ /tr or /tl : To translate to your language, by default language is set to english, use `/tr <lang code>` for some other language!
+ ◉ /splcheck : As a reply to get grammar corrected text of gibberish message.
+ ◉ /tts : To some message to convert it into audio format!
 """
 __mod_name__ = "Translate"
 
