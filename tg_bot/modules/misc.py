@@ -331,7 +331,7 @@ def gdpr(bot: Bot, update: Update):
 
     update.effective_message.reply_text("Your personal data has been deleted.\n\nNote that this will not unban "
                                         "you from any chats, as that is telegram data, not Chiyo's data. "
-                                        "Flooding, warns, and gbans are also preserved in telegrams data.
+                                        "Flooding, warns, and gbans are also preserved in telegrams data.",
                                         parse_mode=ParseMode.MARKDOWN)
 
 
