@@ -6,8 +6,8 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import run_async, CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
 
-import tgbot.modules.sql.global_bans_sql as sql
-from tgbot import (
+import tg_bot.modules.sql.global_bans_sql as sql
+from tg_bot import (
     dispatcher,
     OWNER_ID,
     SUDO_USERS,
@@ -15,11 +15,11 @@ from tgbot import (
     STRICT_GBAN,
     MESSAGE_DUMP,
 )
-from skylee.modules.helper_funcs.chat_status import user_admin, is_user_admin
-from skylee.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from skylee.modules.helper_funcs.filters import CustomFilters
-from skylee.modules.helper_funcs.alternate import typing_action, send_action
-from skylee.modules.sql.users_sql import get_all_chats
+from tg_bot.modules.helper_funcs.chat_status import user_admin, is_user_admin
+from tg_bot.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from tg_bot.modules.helper_funcs.filters import CustomFilters
+from tg_bot.modules.helper_funcs.alternate import typing_action, send_action
+from tg_bot.modules.sql.users_sql import get_all_chats
 
 GBAN_ENFORCE_GROUP = 6
 
