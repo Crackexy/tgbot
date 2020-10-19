@@ -64,7 +64,6 @@ UNGBAN_ERRORS = {
 
 
 @run_async
-@typing_action
 def gban(update, context):
     message = update.effective_message
     chat = update.effective_chat
@@ -203,7 +202,6 @@ def gban(update, context):
 
 
 @run_async
-@typing_action
 def ungban(update, context):
     message = update.effective_message
     args = context.args
@@ -364,7 +362,6 @@ def enforce_gban(update, context):
 
 @run_async
 @user_admin
-@typing_action
 def gbanstat(update, context):
     args = context.args
     if len(args) > 0:
