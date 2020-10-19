@@ -367,13 +367,13 @@ def gbanstat(update, context):
         if args[0].lower() in ["on", "yes"]:
             sql.enable_gbans(update.effective_chat.id)
             update.effective_message.reply_text(
-                "I've enabled Spam Sheild in this group. This will help protect you "
+                "I've enabled banning Global Bans in this group. This will help protect you "
                 "from spammers, unsavoury characters, and the biggest trolls."
             )
         elif args[0].lower() in ["off", "no"]:
             sql.disable_gbans(update.effective_chat.id)
             update.effective_message.reply_text(
-                "I've disabled Spam sheild in this group. GBans wont affect your users "
+                "I've disabled Banning Globally Banned users in this group. GBans wont affect your users "
                 "anymore. You'll be less protected from any trolls and spammers "
                 "though!"
             )
@@ -425,27 +425,14 @@ To turn on or of the effect of global bans in your group.
 
 __mod_name__ = "Global Bans"
 
-GBAN_HANDLER = CommandHandler(
-    "gban",
-    gban,
-    pass_args=True,
-    filters=CustomFilters.sudo_filter | CustomFilters.support_filter,
-)
-UNGBAN_HANDLER = CommandHandler(
-    "ungban",
-    ungban,
-    pass_args=True,
-    filters=CustomFilters.sudo_filter | CustomFilters.support_filter,
-)
-GBAN_LIST = CommandHandler(
-    "gbanlist",
-    gbanlist,
-    filters=CustomFilters.sudo_filter | CustomFilters.support_filter,
-)
+GBAN_HANDLER = CommandHandler("gban", gban, pass_args=True,
+                              filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
+UNGBAN_HANDLER = CommandHandler("ungban", ungban, pass_args=True,
+                                filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
+GBAN_LIST = CommandHandler("gbanlist", gbanlist,
+                           filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
 
-GBAN_STATUS = CommandHandler(
-    "spamshield", gbanstat, pass_args=True, filters=Filters.group
-)
+GBAN_STATUS = CommandHandler("gbanstat", gbanstat, pass_args=True, filters=Filters.group)
 
 GBAN_ENFORCER = MessageHandler(Filters.all & Filters.group, enforce_gban)
 
