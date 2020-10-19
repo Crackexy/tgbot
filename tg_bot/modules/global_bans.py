@@ -278,16 +278,14 @@ def ungban(update, context):
 
 
 @run_async
-def gbanlist(update, context):
+def gbanlist(bot: Bot, update: Update):
     banned_users = sql.get_gban_list()
 
     if not banned_users:
-        update.effective_message.reply_text(
-            "There aren't any gbanned users! You're kinder than I expected..."
-        )
+        update.effective_message.reply_text("There aren't any gbanned users! You're kinder than I expected...")
         return
 
-    banfile = "List of retards.\n"
+    banfile = 'Screw these guys.\n'
     for user in banned_users:
         banfile += "[x] {} - {}\n".format(user["name"], user["user_id"])
         if user["reason"]:
@@ -295,11 +293,12 @@ def gbanlist(update, context):
 
     with BytesIO(str.encode(banfile)) as output:
         output.name = "gbanlist.txt"
-        update.effective_message.reply_document(
-            document=output,
-            filename="gbanlist.txt",
-            caption="Here is the list of currently gbanned users.",
-        )
+        update.effective_message.reply_document(document=output, filename="gbanlist.txt",
+                                                caption="Here is the list of currently gbanned users.")
+
+
+ 
+
 
 
 def check_and_ban(update, user_id, should_message=True):
