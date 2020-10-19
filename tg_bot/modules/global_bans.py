@@ -278,7 +278,6 @@ def ungban(update, context):
 
 
 @run_async
-@send_action(ChatAction.UPLOAD_DOCUMENT)
 def gbanlist(update, context):
     banned_users = sql.get_gban_list()
 
