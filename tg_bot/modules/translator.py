@@ -15,7 +15,6 @@ from googletrans import Translator
 
 
 @run_async
-@typing_action
 def gtrans(update, context):
     msg = update.effective_message
     args = context.args
@@ -39,7 +38,6 @@ def gtrans(update, context):
 
 
 @run_async
-@send_action(ChatAction.RECORD_AUDIO)
 def gtts(update, context):
     msg = update.effective_message
     reply = " ".join(context.args)
@@ -68,7 +66,6 @@ URL = "http://services.gingersoftware.com/Ginger/correct/json/GingerTheText"
 
 
 @run_async
-@typing_action
 def spellcheck(update, context):
     if update.effective_message.reply_to_message:
         msg = update.effective_message.reply_to_message
