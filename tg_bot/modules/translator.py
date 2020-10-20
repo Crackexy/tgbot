@@ -4,10 +4,10 @@ from typing import Optional, List
 from telegram import Message, Update, Bot, ParseMode, Chat
 from telegram.ext import run_async
 
-from haruka import dispatcher
-from haruka.modules.disable import DisableAbleCommandHandler
-from haruka.modules.helper_funcs.string_handling import remove_emoji
-from haruka.modules.tr_engine.strings import tld, tld_list
+from tg_bot import dispatcher
+from tg_bot.modules.disable import DisableAbleCommandHandler
+from tg_bot.modules.helper_funcs.string_handling import remove_emoji
+from tg_bot.modules.tr_engine.strings import tld, tld_list
 
 from googletrans import LANGUAGES, Translator
 
