@@ -32,9 +32,9 @@ def gtrans(update, context):
         translated = translator.translate(translate_text, dest=lang)
         trl = translated.src
         results = translated.text
-        msg.reply_text("Translated from {} to {}.\n {}".format(trl, lang, results))
+        msg.reply_text("*Translated from language {}*\n*Translated to language {}*.\n *{}*".format(trl, lang, results))
     except:
-        msg.reply_text("Error! invalid language code.")
+        msg.reply_text("*Error! Entered Invalid Language Code!!!*")
 
 
 @run_async
@@ -52,12 +52,12 @@ def gtts(update, context):
             reply = reply.replace(x, "")
     try:
         tts = gTTS(reply)
-        tts.save("meikobot.mp3")
-        with open("meikobot.mp3", "rb") as speech:
+        tts.save("chiyo.mp3")
+        with open("chiyo.mp3", "rb") as speech:
             msg.reply_audio(speech)
     finally:
         if os.path.isfile("meikobot.mp3"):
-            os.remove("meikobot.mp3")
+            os.remove("Chiyo.mp3")
 
 
 # Open API key
