@@ -339,14 +339,14 @@ MARKDOWN_HELP = """
 Markdown is a very powerful formatting tool supported by telegram. {} has some enhancements, to make sure that \
 saved messages are correctly parsed, and to allow you to create buttons.
 
-- <code>_italic_</code>: wrapping text with '_' will produce italic text
-- <code>*bold*</code>: wrapping text with '*' will produce bold text
-- <code>`code`</code>: wrapping text with '`' will produce monospaced text, also known as 'code'
-- <code>[sometext](someURL)</code>: this will create a link - the message will just show <code>sometext</code>, \
+ ◉ <code>_italic_</code>: wrapping text with '_' will produce italic text
+ ◉ <code>*bold*</code>: wrapping text with '*' will produce bold text
+ ◉ <code>`code`</code>: wrapping text with '`' will produce monospaced text, also known as 'code'
+ ◉ <code>[sometext](someURL)</code>: this will create a link - the message will just show <code>sometext</code>, \
 and tapping on it will open the page at <code>someURL</code>.
 EG: <code>[test](example.com)</code>
 
-- <code>[buttontext](buttonurl:someURL)</code>: this is a special enhancement to allow users to have telegram \
+ ◉ <code>[buttontext](buttonurl:someURL)</code>: this is a special enhancement to allow users to have telegram \
 buttons in their markdown. <code>buttontext</code> will be what is displayed on the button, and <code>someurl</code> \
 will be the url which is opened.
 EG: <code>[This is a button](buttonurl:example.com)</code>
@@ -371,7 +371,7 @@ def markdown_help(bot: Bot, update: Update):
 
 @run_async
 def stats(bot: Bot, update: Update):
-    update.effective_message.reply_text("Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS]))
+    update.effective_message.reply_text("**Current [Chiyo](https://T.me/ChiyoRobot) stats ⊙.☉** :\n" + "\n".join([mod.__stats__() for mod in STATS]))
 
 
 # /ip is for private use
