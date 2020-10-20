@@ -371,7 +371,7 @@ def markdown_help(bot: Bot, update: Update):
 
 @run_async
 def stats(bot: Bot, update: Update):
-    update.effective_message.reply_text("**Current [Chiyo](https://T.me/ChiyoRobot) stats ⊙.☉** :\n" + "\n".join([mod.__stats__() for mod in STATS]))
+    update.effective_message.reply_text("Current Chiyo stats ⊙.☉ :\n" + "\n".join([mod.__stats__() for mod in STATS]))
 
 
 # /ip is for private use
