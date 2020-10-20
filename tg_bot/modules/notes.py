@@ -101,7 +101,7 @@ def get(bot, update, notename, show_none=True, no_format=False):
                     sql.rm_note(chat_id, notename)
                 else:
                     message.reply_text("This note could not be sent, as it is incorrectly formatted. Ask in "
-                                       "@MarieSupport if you can't figure out why!")
+                                       "@ChiyoSupport if you can't figure out why!")
                     LOGGER.exception("Could not parse message #%s in chat %s", notename, str(chat_id))
                     LOGGER.warning("Message was: %s", str(note.value))
         return
@@ -136,7 +136,7 @@ def save(bot: Bot, update: Update):
     note_name, text, data_type, content, buttons = get_note_type(msg)
 
     if data_type is None:
-        msg.reply_text("Dude, there's no note")
+        msg.reply_text("*Dude, there's no note*")
         return
     
     if len(text.strip()) == 0:
@@ -145,7 +145,7 @@ def save(bot: Bot, update: Update):
     sql.add_note_to_db(chat_id, note_name, text, data_type, buttons=buttons, file=content)
 
     msg.reply_text(
-        "Yas! Added {note_name}.\nGet it with /get {note_name}, or #{note_name}".format(note_name=note_name))
+        "*Aha! Successfully Added {note_name}*.\n*Get it with /get {note_name}, or #{note_name}*".format(note_name=note_name))
 
     if msg.reply_to_message and msg.reply_to_message.from_user.is_bot:
         if text:
@@ -188,7 +188,7 @@ def list_notes(bot: Bot, update: Update):
         msg += note_name
 
     if msg == "*Notes in chat:*\n":
-        update.effective_message.reply_text("No notes in this chat!")
+        update.effective_message.reply_text("*No notes in this chat!!!*")
 
     elif len(msg) != 0:
         update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
